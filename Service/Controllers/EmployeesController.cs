@@ -29,7 +29,7 @@ namespace Service.Controllers
         // GET: Employees
         public ActionResult Index()
         {
-            
+
             return View(EmployeeRepositories.GetList());
         }
 
@@ -71,9 +71,12 @@ namespace Service.Controllers
             if (ModelState.IsValid)
             {
 
+                var test = employee.StartDay;
+                var test2 = employee.StartMonth;
+                var test3 = employee.StartYear;
+                
 
-               
-               
+                
                 EmployeeRepositories.Insert(employee);
                 EmployeeRepositories.Save();
                 return RedirectToAction("Index");
@@ -100,7 +103,15 @@ namespace Service.Controllers
             {
                 return HttpNotFound();
             }
+            var values = from MonthEnum.months d in Enum.GetValues(typeof(MonthEnum.months))
+                         select new
+                         {
+                             Text = d.ToString(),
+                             Value = Convert.ToInt32(d).ToString()
+                         };
+            ViewBag.Months = new SelectList(values, "Value", "Text");
             return View(employee);
+
         }
 
         // POST: Employees/Edit/5
@@ -108,14 +119,23 @@ namespace Service.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,First_Name,Middle_Name,Last_Name,Email_Id,Mobile_No,Address,Status,Start_Date,End_Date,Emp_Status,Hours")] Employee employee)
+        public ActionResult Edit(Employee employee)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(employee).State = EntityState.Modified;
-                db.SaveChanges();
+                EmployeeRepositories.Update(employee);
+                EmployeeRepositories.Save();
+
                 return RedirectToAction("Index");
             }
+            var values = from MonthEnum.months d in Enum.GetValues(typeof(MonthEnum.months))
+                         select new
+                         {
+                             Text = d.ToString(),
+                             Value = Convert.ToInt32(d).ToString()
+                         };
+            ViewBag.Months = new SelectList(values, "Value", "Text");
+
             return View(employee);
         }
 
@@ -141,7 +161,7 @@ namespace Service.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
 
-           
+
             EmployeeRepositories.Delete(id);
             EmployeeRepositories.Save();
             return RedirectToAction("Index");

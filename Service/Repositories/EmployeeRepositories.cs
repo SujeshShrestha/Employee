@@ -2,6 +2,7 @@
 using Service.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -66,7 +67,7 @@ namespace Service.Repositories
 
         public void Update(Employee Employee)
         {
-            throw new NotImplementedException();
+            context.Entry(Employee).State = EntityState.Modified;
         }
     }
 }

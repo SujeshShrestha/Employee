@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmployeeDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="First_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Middle_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Last_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Email_Id" Type="varchar" MaxLength="50" />
+    <Property Name="Mobile_No" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="Start_Date" Type="date" />
+    <Property Name="End_Date" Type="date" />
+    <Property Name="Emp_Status" Type="bit" />
+    <Property Name="Hours" Type="float" />
+    <Property Name="Table_status" Type="bit" />
+    <Property Name="StartDay" Type="int" />
+    <Property Name="StartMonth" Type="int" />
+    <Property Name="StartYear" Type="int" />
+    <Property Name="EndDay" Type="int" />
+    <Property Name="EndMonth" Type="int" />
+    <Property Name="EndYear" Type="int" />
+    <Property Name="OnGoing" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="EmployeeDbModelStoreContainer">
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

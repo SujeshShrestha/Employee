@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmployeeDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EmployeeDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Employees" EntityType="EmployeeDbModel.Employee" />
+  </EntityContainer>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Middle_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="Start_Date" Type="DateTime" Precision="0" />
+    <Property Name="End_Date" Type="DateTime" Precision="0" />
+    <Property Name="Emp_Status" Type="Boolean" />
+    <Property Name="Hours" Type="Double" />
+    <Property Name="Table_status" Type="Boolean" />
+    <Property Name="StartDay" Type="Int32" />
+    <Property Name="StartMonth" Type="Int32" />
+    <Property Name="StartYear" Type="Int32" />
+    <Property Name="EndDay" Type="Int32" />
+    <Property Name="EndMonth" Type="Int32" />
+    <Property Name="EndYear" Type="Int32" />
+    <Property Name="OnGoing" Type="Boolean" Nullable="false" />
+  </EntityType>
+</Schema>

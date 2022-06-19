@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EmployeeDbModelStoreContainer" CdmEntityContainer="EmployeeDbEntities">
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="EmployeeDbModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="OnGoing" ColumnName="OnGoing" />
+          <ScalarProperty Name="EndYear" ColumnName="EndYear" />
+          <ScalarProperty Name="EndMonth" ColumnName="EndMonth" />
+          <ScalarProperty Name="EndDay" ColumnName="EndDay" />
+          <ScalarProperty Name="StartYear" ColumnName="StartYear" />
+          <ScalarProperty Name="StartMonth" ColumnName="StartMonth" />
+          <ScalarProperty Name="StartDay" ColumnName="StartDay" />
+          <ScalarProperty Name="Table_status" ColumnName="Table_status" />
+          <ScalarProperty Name="Hours" ColumnName="Hours" />
+          <ScalarProperty Name="Emp_Status" ColumnName="Emp_Status" />
+          <ScalarProperty Name="End_Date" ColumnName="End_Date" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Mobile_No" ColumnName="Mobile_No" />
+          <ScalarProperty Name="Email_Id" ColumnName="Email_Id" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Middle_Name" ColumnName="Middle_Name" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

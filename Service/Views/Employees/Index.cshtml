@@ -18,17 +18,17 @@
 
     @foreach (var item in Model)
     {
-        DateTime zeroTime = new DateTime(1, 1, 1);
 
-        TimeSpan TimeDiffer = TimeSpan.Zero;
-        if (item.StartYear!=null && item.StartMonth!=null&& item.StartDay != null)
-        {
-            var StartDate = new DateTime(item.StartYear.Value, (int)item.StartMonth.Value, item.StartDay.Value);
-            var EndDate = new DateTime(item.EndYear.Value, (int)item.EndMonth.Value, item.EndDay.Value);
-            TimeDiffer = item.OnGoing ? DateTime.Now - StartDate : EndDate-StartDate;
-        }
-        int years = (zeroTime + TimeDiffer).Year - 1;
+        //DateTime zeroTime = new DateTime(1, 1, 1);
 
+        //TimeSpan TimeDiffer = TimeSpan.Zero;
+        //if (item.StartYear != null && item.StartMonth != null && item.StartDay != null)
+        //{
+        //    var StartDate = new DateTime(item.StartYear.Value, (int)item.StartMonth.Value, item.StartDay.Value);
+        //    var EndDate = new DateTime(item.EndYear.Value, (int)item.EndMonth.Value, item.EndDay.Value);
+        //    TimeDiffer = item.OnGoing ? DateTime.Now - StartDate : EndDate - StartDate;
+        //}
+        //int years = (zeroTime + TimeDiffer).Year - 1;
 
 
         <tr>
@@ -45,7 +45,7 @@
 
                 <br />
 
-                @years
+                @*@years*@
 
             </td>
             
