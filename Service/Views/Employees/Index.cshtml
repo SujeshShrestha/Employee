@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Service.Models.Employee>
+
+@{
+    ViewBag.Title = "Employee List";
+}
+
+<h2>Index</h2>
+<div class="form-group">
+    <div class="col-md-offset-8 col-md-10">
+        
+        @Html.ActionLink("Add Employee", "Create") 
+    </div>
+</div>
+
+
+<table class="table">
+
+
+    @foreach (var item in Model)
+    {
+        DateTime zeroTime = new DateTime(1, 1, 1);
+
+        TimeSpan TimeDiffer = TimeSpan.Zero;
+        if (item.StartYear!=null && item.StartMonth!=null&& item.StartDay != null)
+        {
+            var StartDate = new DateTime(item.StartYear.Value, (int)item.StartMonth.Value, item.StartDay.Value);
+            var EndDate = new DateTime(item.EndYear.Value, (int)item.EndMonth.Value, item.EndDay.Value);
+            TimeDiffer = item.OnGoing ? DateTime.Now - StartDate : EndDate-StartDate;
+        }
+        int years = (zeroTime + TimeDiffer).Year - 1;
+
+
+
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.First_Name)
+                <br />
+                @Html.DisplayFor(modelItem => item.Middle_Name)
+                <br />
+                @Html.DisplayFor(modelItem => item.Last_Name)
+                <br />
+                @Html.DisplayFor(modelItem => item.Email_Id)
+
+
+                <br />
+
+                @years
+
+            </td>
+            
+            <td>
+                <br />
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
